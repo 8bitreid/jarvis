@@ -19,7 +19,7 @@ class JarvisServiceSpec extends FlatSpec with MockFactory {
 
   "JarvisService" should
     "reply with a greeting" in {
-    mockCollaborator.serverStatus.value === expectedResponse.value)
+    assert(mockCollaborator.serverStatus.value === expectedResponse.value)
     assert(mockCollaborator.getVersion.value === expectedVersion.value)
   }
 }
