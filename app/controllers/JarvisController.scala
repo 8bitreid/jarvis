@@ -16,7 +16,7 @@ class JarvisController(jarvisService: JarvisService,
   def status: Action[AnyContent] = Action.async {
     logger.info("Jarvis, can you check the server?" )
     println("Jarvis, can you check the server?")
-    jarvisService.serverStatus().map {
+    jarvisService.serverStatus.map {
       res => Ok(Json.toJson(res))
     }
   }
@@ -25,7 +25,13 @@ class JarvisController(jarvisService: JarvisService,
     // TODO get logging working.
     logger.info("Jarvis, you're attention is required." )
     println("Jarvis, you're attention is required")
-    jarvisService.greetingMessage().map{
+    jarvisService.greetingMessage.map{
+      res => Ok(Json.toJson(res))
+    }
+  }
+
+  def version: Action[AnyContent] = Action.async {
+    jarvisService.getVersion. map{
       res => Ok(Json.toJson(res))
     }
   }

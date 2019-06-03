@@ -1,3 +1,5 @@
 
 GET     /jarvis/status                              controllers.JarvisController.status
 GET     /jarvis/hello                               controllers.JarvisController.helloJarvis
+
+GET     /jarvis/version                             controllers.JarvisController.version
