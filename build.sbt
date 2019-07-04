@@ -12,9 +12,9 @@ crossScalaVersions := Seq("2.11.12", "2.12.8")
 
 libraryDependencies ++= Seq(
   "com.softwaremill.macwire" %% "macros" % "2.3.2" % "provided",
+  "org.mongodb.scala" %% "mongo-scala-driver" % "2.6.0",
   "org.scalamock" %% "scalamock" % "4.1.0" % Test,
   "org.scalatest" %% "scalatest" % "3.0.4" % Test
-
 )
 
 scalacOptions ++= Seq(

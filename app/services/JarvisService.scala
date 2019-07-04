@@ -1,10 +1,11 @@
 package services
 
 import models.{JarvisResponse, Version}
+import org.mongodb.scala.Observable
 
 import scala.concurrent.Future
 
-class JarvisService {
+class JarvisService(data: JarvisData) {
 
   def serverStatus: Future[JarvisResponse] = {
     Future.successful(JarvisResponse("All good here.  Was there anything else?"))
@@ -16,6 +17,10 @@ class JarvisService {
 
   def getVersion: Future[Version] = {
     Future.successful(Version(1, 0, 0))
+  }
+
+  def getSomething: Future[String] = {
+    data.db.listCollectionNames().subscribe(observer => observer)
   }
 
 }
