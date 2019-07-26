@@ -9,7 +9,6 @@ import scala.concurrent.Future
 import scala.concurrent.Future.successful
 
 class JarvisServiceSpec extends FunSpec with MockFactory with BeforeAndAfter{
-
   val expectedResponse: Future[JarvisResponse] = successful(JarvisResponse("All good here. Was there anything else?"))
   val expectedVersion: Future[Version] = successful(Version(1,0,0))
 
