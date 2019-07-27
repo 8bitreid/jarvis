@@ -9,6 +9,12 @@ trait TransformerClient{
 class TransformerClientThing(transformer: TransformerThingy)extends TransformerClient {
   override def getTheTransformedThing: ClientTypeThingWithOtherStuff = transformer.transformTheThing().map {
     // using an interface breaks this.. since we don't know which implementation to use
-    thing => ClientTypeThingWithOtherStuff(thing.name)
-  }.getOrElse(ClientTypeThingWithOtherStuff(""))
+    transformedThing => ClientTypeThingWithOtherStuff(transformedThing.name, otherStuff, transformedThing.id)
+  }.getOrElse(ClientTypeThingWithOtherStuff("", 0, 0))
+
+  private val otherStuff: Int = 42
 }
+
+// TODO add new function login for ThingB...
+
+
