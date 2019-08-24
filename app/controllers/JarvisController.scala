@@ -35,4 +35,6 @@ class JarvisController(jarvisService: JarvisService,
       res => Ok(Json.toJson(res))
     }
   }
+
+  def voiceRecSso: Action[AnyContent] = TODO
 }

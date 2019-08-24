@@ -3,3 +3,5 @@ GET     /jarvis/status                              controllers.JarvisController
 GET     /jarvis/hello                               controllers.JarvisController.helloJarvis
 
 GET     /jarvis/version                             controllers.JarvisController.version
+
+GET     /jarvis/vosso                               controllers.JarvisController.voiceRecSso
