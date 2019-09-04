@@ -6,7 +6,9 @@ import scala.concurrent.Future
 class JarvisService {
 
   def serverStatus: Future[JarvisResponse] = {
-    Future.successful(JarvisResponse("All good here.  Was there anything else?"))
+    Future.successful(
+      JarvisResponse("All good here.  Was there anything else?")
+    )
   }
 
   def greetingMessage: Future[JarvisResponse] = {

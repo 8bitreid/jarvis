@@ -12,6 +12,7 @@ crossScalaVersions := Seq("2.11.12", "2.12.8")
 
 libraryDependencies ++= Seq(
   "com.softwaremill.macwire" %% "macros" % "2.3.2" % "provided",
+  "xyz.hyperreal" %% "markdown" % "0.5.3",
   "org.scalamock" %% "scalamock" % "4.1.0" % Test,
   "org.scalatest" %% "scalatest" % "3.0.4" % Test
 )
@@ -21,6 +22,9 @@ scalacOptions ++= Seq(
     "-deprecation",
     "-Xfatal-warnings"
 )
+
+resolvers += "Hyperreal Repository" at "https://dl.bintray.com/edadma/maven"
+
 //Docker Configuration
 dockerEnvVars := Map("APPLICATION_SECRET"->"QCYtAnfkaZiwrNwnxIlR6CTfG3gf90Latabg5241ABR5W1uDFNIkn")
 dockerExposedPorts ++= Seq(9000, 9001)

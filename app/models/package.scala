@@ -10,7 +10,7 @@ package object models {
 
   case class Version(major: Int, minor: Int, incremental: Int)
 
-  object Version  {
+  object Version {
     implicit val VersionFormat: OFormat[Version] = Json.format[Version]
   }
 
