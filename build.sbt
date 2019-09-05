@@ -23,8 +23,6 @@ scalacOptions ++= Seq(
     "-Xfatal-warnings"
 )
 
-resolvers += "Hyperreal Repository" at "https://dl.bintray.com/edadma/maven"
-
 //Docker Configuration
 dockerEnvVars := Map("APPLICATION_SECRET"->"QCYtAnfkaZiwrNwnxIlR6CTfG3gf90Latabg5241ABR5W1uDFNIkn")
 dockerExposedPorts ++= Seq(9000, 9001)

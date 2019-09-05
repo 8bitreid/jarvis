@@ -5,8 +5,8 @@ J.A.R.V.I.S runs in docker.
 We use [sbt-native-packager](https://sbt-native-packager.readthedocs.io/en/stable/) to build our docker image with sbt commands.
 to build our image we use:  
 ```sbtshell
-sbt:stage
-sbt:publishLocal
+sbt docker:stage
+sbt docker:publishLocal
 ```
 to run our app we then we use: 
 ```bash
