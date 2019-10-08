@@ -1,10 +1,10 @@
 name := """JARVIS"""
 
-version := "1.0.0-SNAPSHOT"
+// version := "0.0.1-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-enablePlugins(JavaAppPackaging, DockerPlugin)
+enablePlugins(JavaAppPackaging, DockerPlugin, GitVersioning)
 
 scalaVersion := "2.12.8"
 
