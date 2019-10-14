@@ -12,7 +12,6 @@ crossScalaVersions := Seq("2.11.12", "2.12.8")
 
 libraryDependencies ++= Seq(
   "com.softwaremill.macwire" %% "macros" % "2.3.2" % "provided",
-  "xyz.hyperreal" %% "markdown" % "0.5.3",
   "org.scalamock" %% "scalamock" % "4.1.0" % Test,
   "org.scalatest" %% "scalatest" % "3.0.4" % Test
 )
