@@ -1,5 +1,4 @@
 import controllers.JarvisController
-import play.api.i18n.Langs
 import play.api.mvc.ControllerComponents
 import services.JarvisServicesModule
 

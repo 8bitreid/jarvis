@@ -1,4 +1,3 @@
-
 import _root_.controllers.AssetsComponents
 import com.softwaremill.macwire._
 import play.api.ApplicationLoader.Context
@@ -8,17 +7,18 @@ import play.api.routing.Router
 import router.Routes
 
 /**
- * Application loader that wires up the application dependencies using Macwire
- */
+  * Application loader that wires up the application dependencies using Macwire
+  */
 class JarvisApplicationLoader extends ApplicationLoader {
   def load(context: Context): Application = new JarvisModuleComponents(context).application
 }
 
-class JarvisModuleComponents(context: Context) extends BuiltInComponentsFromContext(context)
-  with JarvisModule
-  with AssetsComponents
-  with I18nComponents 
-  with play.filters.HttpFiltersComponents {
+class JarvisModuleComponents(context: Context)
+    extends BuiltInComponentsFromContext(context)
+    with JarvisModule
+    with AssetsComponents
+    with I18nComponents
+    with play.filters.HttpFiltersComponents {
 
   // set up logger
   LoggerConfigurator(context.environment.classLoader).foreach {
