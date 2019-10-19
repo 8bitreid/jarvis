@@ -28,5 +28,9 @@ class JarvisController(jarvisService: JarvisService, cc: ControllerComponents)(
     }
   }
 
-  def voiceRecSso: Action[AnyContent] = TODO
+  def buildinfo: Action[AnyContent] = Action.async {
+    jarvisService.getBuildInfo.map { data => 
+      Ok(data)
+    }
+  }
 }

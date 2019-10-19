@@ -1,20 +1,33 @@
 name := """JARVIS"""
 
-// version := "0.0.1-SNAPSHOT"
+lazy val root = (project in file("."))
+.enablePlugins(
+  PlayScala,
+  JavaAppPackaging, 
+  DockerPlugin, 
+  GitVersioning,
+  BuildInfoPlugin
+  ).settings(
+    buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion),
+    buildInfoPackage := "jarvis.info"
+  )
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
-
-enablePlugins(JavaAppPackaging, DockerPlugin, GitVersioning)
-
-scalaVersion := "2.12.8"
-
-crossScalaVersions := Seq("2.11.12", "2.12.8")
-
-libraryDependencies ++= Seq(
+  libraryDependencies ++= Seq(
   "com.softwaremill.macwire" %% "macros" % "2.3.2" % "provided",
   "org.scalamock" %% "scalamock" % "4.1.0" % Test,
   "org.scalatest" %% "scalatest" % "3.0.4" % Test
 )
+// Scala Version 
+scalaVersion := "2.12.8"
+
+//Build Info
+buildInfoOptions += BuildInfoOption.ToJson
+  
+//Git Info
+showCurrentGitBranch
+git.useGitDescribe := true
+
+crossScalaVersions := Seq("2.11.12", "2.12.8")
 
 scalacOptions ++= Seq(
     "-feature",

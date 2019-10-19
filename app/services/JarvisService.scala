@@ -3,6 +3,7 @@ package services
 import models.{JarvisResponse, Version}
 
 import scala.concurrent.{ExecutionContext, Future}
+import jarvis.info.BuildInfo
 
 class JarvisService {
 
@@ -15,15 +16,31 @@ class JarvisService {
   }
 
   def getVersion: Future[Version] = {
-    Future.successful(Version(1, 0, 0))
+    Future.successful(Version(1,0,0))
   }
 
+  def getBuildInfo: Future[String] = {
+    Future.successful(JarvisVersion.currentVersionJson)
+  }
+
+
+  object JarvisVersion {
+    val currentVersionJson = BuildInfo.toJson
+  }
   object Responses {
 
     import scala.util.Random
 
-    private val jarvisResponse = Seq("Everything here looks tip top.", "All good here.", "It's all rainbows and butterflies.")
-    private val jarvisPoliteRequest = Seq("Was there anything else?", "How else may I be of service?", "Will that be all?")
+    private val jarvisResponse = Seq(
+      "Everything here looks tip top.", 
+      "All good here.", 
+      "It's all rainbows and butterflies."
+      )
+    private val jarvisPoliteRequest = Seq(
+      "Was there anything else?", 
+      "How else may I be of service?", 
+      "Will that be all?"
+      )
 
     def genResponse: Future[String] = {
       val rand = new Random
