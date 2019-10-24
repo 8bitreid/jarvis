@@ -22,14 +22,8 @@ class JarvisController(jarvisService: JarvisService, cc: ControllerComponents)(
     }
   }
 
-  def version: Action[AnyContent] = Action.async {
-    jarvisService.getVersion.map { res =>
-      Ok(Json.toJson(res))
-    }
-  }
-
   def buildinfo: Action[AnyContent] = Action.async {
-    jarvisService.getBuildInfo.map { data => 
+    jarvisService.getBuildInfo.map { data =>
       Ok(data)
     }
   }

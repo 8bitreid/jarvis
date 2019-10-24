@@ -8,10 +8,4 @@ package object models {
     implicit val JarvisResponse: OFormat[JarvisResponse] = Json.format[JarvisResponse]
   }
 
-  case class Version(major: Int, minor: Int, incremental: Int)
-
-  object Version {
-    implicit val VersionFormat: OFormat[Version] = Json.format[Version]
-  }
-
 }
