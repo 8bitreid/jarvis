@@ -12,3 +12,6 @@ to run our app we then we use:
 ```bash
  docker run --rm -p 9000:9000 jarvis:TAG
 ``` 
+
+# Github Actions
+based on this https://k8ty.app/docs/k8ty-app/gh-actions we are testing [sbtx](https://github.com/dwijnand/sbt-extras)
