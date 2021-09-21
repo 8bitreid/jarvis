@@ -1,0 +1,22 @@
+name: Scala CI
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  push_latest:
+    name: Push image:latest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Java
+        uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        name: Sbt Test
+        with:
+          java-version: '15'
+          java-package: jdk
+          architecture: x64
+      - run: |
+          curl -Ls https://git.io/sbt > sbtx && chmod 0755 sbtx
+          ./sbtx test
